@@ -1,0 +1,10 @@
+name = 'Ibrahim'
+age = 20
+gender = 'M'
+company = 'SKY UK'
+jobTitle = 'Test Analyst'
+yearsOfExperience = 2
+salary = 50_000
+is_fullTime = True
+is_married = True
+employee_id = 'F4576'
