@@ -99,7 +99,7 @@ print('-------------------------------------------------')
 # def sum(n1: numbers, n2: numbers, n3: numbers, n4:numbers) ->numbers: # if
 # I assign 2 arguments it gives ERROR. So we need to provide default value
 
-def sum(n1: numbers, n2: numbers, n3: numbers = 0, n4: numbers = 0) -> numbers: #======> THIS IS FUNCTION
+def sum(n1: numbers, n2: numbers, n3: numbers = 0, n4: numbers = 0) -> numbers:  # ======> THIS IS FUNCTION
     return n1 + n2 + n3 + n4
 
 
@@ -109,6 +109,34 @@ print(sum(10, 20, 30))
 
 print(sum(10, 20, 30, 40))
 
-class Test :
-    def method(self): # =========> THIS IS A METHOD. 1. CLASS ICINDE. 2. def'den once indentation bulunmakta.
+
+class Test:
+    def method(self):  # =========> THIS IS A METHOD. 1. CLASS ICINDE. 2. def'den once indentation bulunmakta.
         pass
+
+
+print('-------------------------------------------------')
+
+# LET'S DO A FUNCTION COVERING ALL RULES FOR FUNCTION
+# Concat Function'da ilk argumentimiz String olcak digerlerinin TYPE'i belirsiz
+
+def concat (a: str, b, c= '', d= '', e= ''):
+    print(f"{a} {b} {c} {d} {e}".strip())
+
+concat('Cydeo', 'School')
+concat('Python', 3, 2.5)
+concat('Python', 3, 2.5, True)
+concat('Python', 3, 2.5, True, False)
+
+
+"""
+ABOUT THE FUNCTION
+1. Declaring
+2. Parameters
+3. Restricting parameters' data type
+4. Setting default value to parameters
+5. Restricting return data type
+
+Make sure you understand DYNAMIC TYPING
+"""
+
