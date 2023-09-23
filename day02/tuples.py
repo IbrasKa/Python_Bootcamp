@@ -75,3 +75,21 @@ for x in reversed(range(0, len(days))):
     print(x, end=" ")
 
 print('\n-------------------------------------------------')
+
+nested_tuple = ( (1, 2, 3, ), (4, 5, 6, 7, 8), (9, 10))
+print(len(nested_tuple))
+
+# we can iterate nested tupe with nested loop
+
+print('\n-------------------------------------------------')
+
+for x in nested_tuple:
+    print(x)
+    for y in x:
+        print(y)
+
+print('\n-------------------------------------------------')
+
+for i in range(0, len(nested_tuple)):
+    for j in range (0,len(nested_tuple[i])):
+        print(nested_tuple[i][j])
