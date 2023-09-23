@@ -18,24 +18,10 @@ def crew_and_passenger(total: int = 0):
             print('25 crew, 50 passengers')
         elif total == 100:
             print('30 crew, 70 passengers')
+        else:
+            print('Invalid number')
     else:
         print('Invalid number')
 
 
-crew_and_passenger(37)
-
-
-def crew_and_passenger2(total: int = 50 <= int >= 100):
-    if total == 50:
-        print('20 crew, 30 passengers')
-
-    elif total == 75:
-        print('25 crew, 50 passengers')
-
-    elif total == 100:
-        print('30 crew, 70 passengers')
-
-    else:
-        print('Invalid number')
-
-crew_and_passenger(38)
+crew_and_passenger(1200)
