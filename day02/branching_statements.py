@@ -25,4 +25,8 @@ if True:
     pass
 
 class Class:
+
+    def method(self):
+        pass
+
     pass
