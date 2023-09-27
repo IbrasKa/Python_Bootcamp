@@ -61,7 +61,7 @@ def positiveNegativeNumber(num: int = 0):
         print(f'Type of argument is {type(num).__name__}. It is invalid')
 
 
-positiveNegativeNumber('45')
+positiveNegativeNumber(30)
 
 
 def isPalindrome(words: str = ''):
