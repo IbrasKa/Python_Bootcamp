@@ -157,14 +157,13 @@ list4.reverse()
 
 print(list4)
 
-
 print('-------------------------------------------------')
 
 # converting one data structure to another
 
 tuple_elements = ('Java', 'Python', 'C#', 'Ruby')
 
-list5 = list (tuple_elements)
+list5 = list(tuple_elements)
 
 list5[-2] = 'C++'
 list5.append('SWIFT')
@@ -175,4 +174,93 @@ tuple_elements = tuple(list5)
 
 print(tuple_elements)
 
+print('-------------------------------------------------')
 
+list6 = [1, 2, 3, 4, 5, 6]
+list7 = [1, 2, 3, 4, 5, 6]
+
+print(list6 is list7)  # False. Because list is mutable, there is no guarantee that they will not be changed
+# 'is' means REFERENCING
+
+tuple1 = (1, 2, 3, 4, 5, 6)
+tuple2 = (1, 2, 3, 4, 5, 6)
+
+print(tuple1 is tuple2)  # True. Because tuple is immutable
+
+print('-------------------------------------------------')
+
+# remove () method
+
+groceries_list.remove('Beef')
+print(groceries_list)
+
+# if you want to remove elements by index, we will use pop() method
+
+groceries_list.pop(3)
+
+print(groceries_list)
+
+# If you don't put any index number, pop() removes last index
+
+groceries_list.pop()  # will remove 'Onion'
+
+print(groceries_list)
+
+# What is the difference between append() and insert()?. in insert() method we will add an element with an index number
+
+groceries_list.insert(2, 'Watermelon')
+print(groceries_list)
+
+# count() gives us number of the element in the list
+
+nums5 = [1, 2, 3, 4, 5, 1, 1, 1, 1, 1, 1]
+
+print(nums5.count(1))
+
+print('-------------------------------------------------')
+
+# List COMPREHENSION Practices
+
+nums6 = []
+
+for x in range(1, 51):
+    nums6.append(x)
+print(nums6)
+
+print('-------------------------------------------------')
+
+# LIST COMPREHENSION
+
+# new_list = [ var_name for var_name in iterable if condition ]
+
+# divisible_by_5 = []
+#
+# for y in nums6:
+#     if y % 5 == 0:
+#         divisible_by_5.append(y)
+# print(divisible_by_5)
+
+# above is the solution with loop. but we can do with list comprehension by using only one row.
+
+divisible_by_5 = tuple([x for x in nums6 if x % 5 == 0])
+
+print(divisible_by_5)
+
+# TUPLE is not supported by COMPREHENSION
+
+print('-------------------------------------------------')
+
+even_nums = [x for x in nums6 if x % 2 == 0]
+odd_numbers = [x for x in nums6 if x % 2 != 0]
+print(odd_numbers)
+print(even_nums)
+
+print('-------------------------------------------------')
+
+# to remove string elements by using comprehension
+
+names2 = ['Python', 'Java', 'Java', 'JavaScript', 'java', 'JaVA', 'Ruby']
+
+names2 = [x for x in names2 if x.lower() != 'java']
+
+print(names2)
