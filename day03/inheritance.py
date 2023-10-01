@@ -48,7 +48,6 @@ class Teacher(Employee):
 
         # Abow constructor, we must pass only 2 argument as the rest has default values
 
-
     def work(self):
         print(f"{self.name} is teaching")
 
