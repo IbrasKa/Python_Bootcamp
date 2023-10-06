@@ -19,74 +19,69 @@
 # 		            Eagle
 """
 
+from typing import final
+
 
 class Animal:
 
-    def __init__(self, name: str, food: str, BREED: str, GENDER: str, COLOUR: str, age: int = 0, size: str = ''):
+    def __init__(self, name: str, food: str, breed: str, gender: str, colour: str, age: int = 0, size: str = ''):
         self.name = name
-        self.BREED = BREED
-        self.GENDER = GENDER
+        self.__BREED = breed
+        self.__GENDER = gender
+        self.__COLOUR = colour
         self.age = age
         self.size = size
-        self.COLOUR = COLOUR
         self.food = food
 
+    @property
+    def animal_breed(self):
+        return self.__BREED
+
+    @animal_breed.setter
+    def animal_breed(self, breed):
+        raise RuntimeError(f'breed is constant, can not be changed')
+
+    @property
+    def animal_gender(self):
+        return self.__GENDER
+
+    @animal_gender.setter
+    def animal_gender(self, gender):
+        raise RuntimeError(f'gender is constant, can not be changed')
+
+    @property
+    def animal_colour(self):
+        return self.__COLOUR
+
+    @animal_colour.setter
+    def animal_colour(self, colour):
+        raise RuntimeError(f'gender is constant, can not be changed')
+
+    @final
     def eat(self):
         return f"{self.name} is eating {self.food}"
 
+    @final
     def drinks(self):
-        return f"drinks water"
+        return f"{self.name} is drinking water"
 
     def __str__(self):
         return f"{type(self).__name__}{self.__dict__}, {self.eat()} and {self.drinks()}"
 
 
 class Dog(Animal):
-
-    def __init__(self, name: str, food: str, BREED='Pit Bull', GENDER= 'Male', COLOUR='White and Black', age: int = 0, size: str = ''):
-        super().__init__(name, food, BREED, GENDER, COLOUR, age, size)
-
-        self.BREED = 'Pit Bull'
-        self.GENDER = 'Male'
-        self.COLOUR = 'White and Black'
-
-    def eat(self):
-        return f" {self.name} is eating {self.food}"
+    pass
 
 
 class Cat(Animal):
-
-    def __init__(self, name: str, food: str, BREED='Turkish Van', GENDER='Female', COLOUR='White', age: int = 0,
-                 size: str = ''):
-        super().__init__(name, food, BREED, GENDER, COLOUR, age, size)
-
-        self.BREED = 'Turkish Van'
-        self.GENDER = 'Female'
-        self.COLOUR = 'White'
-
-    def eat(self):
-        return f" {self.name} is eating {self.food}"
+    pass
 
 
 class Eagle(Animal):
-
-    def __init__(self, name: str, food: str, BREED='Golden Eagle', GENDER='Male', COLOUR='Golden-brown', age: int = 0,
-                 size: str = ''):
-        super().__init__(name, food, BREED, GENDER, COLOUR, age, size)
-
-        self.BREED = 'Golden Eagle'
-        self.GENDER = 'Male'
-        self.COLOUR = 'Golden-brown'
-
-    def eat(self):
-        return f" {self.name} is eating {self.food}"
+    pass
 
 
-dog1 = Dog('Sepet', 'Beef', 'Karabas', 'Female')
+dog1 = Animal('Sepet', 'Beef', 'Karabas', 'Male', 'Black', 9, 'Medium')
 print(dog1)
-
-cat1 = Cat('Premses', 'Cheese')
-print(cat1)
-#
-eagle1 = Eagle('Tirsik', 'Fish')
-print(eagle1)
+dog1.animal_breed = 'Pitbull'
+print(dog1)
