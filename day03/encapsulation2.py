@@ -9,6 +9,9 @@ class Person:
 
     @property
     def person_name(self):
+        if self.__name is None or self.__name == '' or type(self.__name) != str:
+            raise RuntimeError(f'Invalid name has been set: {self.__name}')
+
         return self.__name
 
     @person_name.setter
@@ -34,8 +37,13 @@ class Person:
 
         self.__age = age
 
+    def __str__(self):
+        return f'{type(self).__name__}{str(self.__dict__).replace("_Person__", "")}'
+
 
 person1 = Person()
+person1.person_name = 'Daniel'
+print(person1)
 print(person1.person_name, person1.person_age)  # shortcut kullandigimiz icin method yerine variable kullandik.
 # person1.person_name() yerine person1.person_name
 # encapsulation1 modulune bak.
